@@ -1,3 +1,8 @@
 name: Lobby
 version: '${project.version}'
 main: avalon.net.lobby.Lobby
+commands:
+    build:
+        description: Setzt dich in den Bau-Modus
+        usage: /build
+        permission: lobby.build
