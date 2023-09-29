@@ -1,6 +1,7 @@
 package avalon.net.lobby.commands;
 
 import avalon.net.lobby.Lobby;
+import avalon.net.lobby.listener.ConnectionListener;
 import org.bukkit.GameMode;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
@@ -19,11 +20,13 @@ public class BuildCommand implements CommandExecutor {
                     Lobby.build.remove(p);
                     p.setGameMode(GameMode.SURVIVAL);
                     p.sendMessage(Lobby.prefix + "§cDu bist nicht mehr nun im Bau-Modus!");
+                    ConnectionListener.setLobbyItems(p);
                     Lobby.playMessageSound(p);
                 } else {
                     Lobby.build.add(p);
                     p.setGameMode(GameMode.CREATIVE);
                     p.sendMessage(Lobby.prefix + "§aDu bist nun im Bau-Modus!");
+                    p.getInventory().clear();
                     Lobby.playMessageSound(p);
                 }
             } else

@@ -7,6 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class ProtectionListener implements Listener {
@@ -41,6 +42,13 @@ public class ProtectionListener implements Listener {
     @EventHandler
     public void onEntityDamageByEntity(EntityDamageEvent e) {
         if(e.getEntity() instanceof Player) {
+            e.setCancelled(true);
+        }
+    }
+    @EventHandler
+    public void onInventoryClick(InventoryClickEvent e) {
+        Player p = (Player) e.getWhoClicked();
+        if(!Lobby.build.contains(p)) {
             e.setCancelled(true);
         }
     }
