@@ -19,10 +19,12 @@ public class BuildCommand implements CommandExecutor {
                     Lobby.build.remove(p);
                     p.setGameMode(GameMode.SURVIVAL);
                     p.sendMessage(Lobby.prefix + "§cDu bist nicht mehr nun im Bau-Modus!");
+                    Lobby.playMessageSound(p);
                 } else {
                     Lobby.build.add(p);
                     p.setGameMode(GameMode.CREATIVE);
                     p.sendMessage(Lobby.prefix + "§aDu bist nun im Bau-Modus!");
+                    Lobby.playMessageSound(p);
                 }
             } else
                 p.sendMessage(Lobby.noPerm);

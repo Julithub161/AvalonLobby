@@ -6,3 +6,11 @@ commands:
         description: Setzt dich in den Bau-Modus
         usage: /build
         permission: lobby.build
+    fly:
+        description: Setzt dich in den Flug-Modus
+        usage: /fly
+        permission: lobby.fly
+    chatclear:
+        description: Leert den Chat
+        usage: /chatclear
+        permission: lobby.chatclear
