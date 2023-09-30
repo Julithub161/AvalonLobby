@@ -14,3 +14,7 @@ commands:
         description: Leert den Chat
         usage: /chatclear
         permission: lobby.chatclear
+    setspawn:
+        description: Setzt den Spawn
+        usage: /setspawn [Spawn]
+        permission: lobby.setspawn

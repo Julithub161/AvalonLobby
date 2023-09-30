@@ -9,7 +9,8 @@ import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 
-public class FlyCommand implements CommandExecutor {
+public class
+FlyCommand implements CommandExecutor {
     private ArrayList<Player> flyMode = new ArrayList<>();
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {

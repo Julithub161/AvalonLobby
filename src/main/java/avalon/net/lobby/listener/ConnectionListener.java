@@ -8,6 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.inventory.ItemStack;
 
 public class ConnectionListener implements Listener {
     @EventHandler
@@ -85,9 +86,12 @@ public class ConnectionListener implements Listener {
                 break;
         }
     }
+    public static String hideItemName = "§6Spieler verstecken";
+    public static String navigatorItemName = "§6Navigator";
     public static void setLobbyItems(Player p) {
-        ItemBuilder playerHide = new ItemBuilder(Material.GLOWSTONE_DUST);
-        playerHide.setName("§dSpieler verstecken");
-        p.getInventory().setItem(4, playerHide);
+        ItemStack playerHide = new ItemBuilder(Material.WATCH).name(hideItemName).build();
+        p.getInventory().setItem(3, playerHide);
+        ItemStack navigator = new ItemBuilder(Material.COMPASS).name(navigatorItemName).build();
+        p.getInventory().setItem(5, navigator);
     }
 }
