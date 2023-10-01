@@ -1,0 +1,9 @@
+Permissions:
+    lobby.build: Erlaubt einem Spieler in den BuildModus zu wechseln.
+    lobby.fly: Erlaubt einem Spieler in den FlugModus zu wechseln.
+    lobby.gamemode: Erlaubt einem Spieler seinen Spielmodus zu ändern.
+    lobby.chatclear: Erlaubt einem Spieler den Chat zu leeren.
+    lobby.chatclearbypass: Erlaubt einem Spieler den Chat trotzdem zu sehen wenn er geleert wurde.
+    lobby.setspawn: Erlaubt einem Spieler Spawnpoints zu setzen.
+    lobby.vanish: Erlaubt einem Spieler sich für alle unsichtbar zu machen.
+    lobby.vanishbypass: Zeigt alle Unsichtbaren Spieler an.

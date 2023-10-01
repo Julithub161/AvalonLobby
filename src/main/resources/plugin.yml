@@ -14,7 +14,20 @@ commands:
         description: Leert den Chat
         usage: /chatclear
         permission: lobby.chatclear
+        aliases:
+            - cc
     setspawn:
         description: Setzt den Spawn
         usage: /setspawn [Spawn]
         permission: lobby.setspawn
+    gamemode:
+        description: Setzt deinen Spielmodus
+        usage: /gamemode <0|1|2|3>
+        permission: lobby.gamemode
+        aliases:
+            - gm
+            - g
+    vanish:
+        description: Macht dich für alle Spieler unsichtbar
+        usage: /vanish
+        permission: lobby.vanish

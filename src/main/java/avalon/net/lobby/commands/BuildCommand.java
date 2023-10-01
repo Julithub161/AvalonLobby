@@ -19,7 +19,7 @@ public class BuildCommand implements CommandExecutor {
                 if(Lobby.build.contains(p)) {
                     Lobby.build.remove(p);
                     p.setGameMode(GameMode.SURVIVAL);
-                    p.sendMessage(Lobby.prefix + "§cDu bist nicht mehr nun im Bau-Modus!");
+                    p.sendMessage(Lobby.prefix + "§cDu bist nun nicht mehr im Bau-Modus!");
                     ConnectionListener.setLobbyItems(p);
                     Lobby.playMessageSound(p);
                 } else {

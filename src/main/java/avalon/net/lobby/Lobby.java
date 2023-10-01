@@ -1,9 +1,6 @@
 package avalon.net.lobby;
 
-import avalon.net.lobby.commands.BuildCommand;
-import avalon.net.lobby.commands.ChatClearCommand;
-import avalon.net.lobby.commands.FlyCommand;
-import avalon.net.lobby.commands.SetSpawnCommand;
+import avalon.net.lobby.commands.*;
 import avalon.net.lobby.listener.*;
 import avalon.net.lobby.manager.ConfigManager;
 import org.bukkit.Sound;
@@ -16,11 +13,10 @@ import java.util.ArrayList;
 
 public final class Lobby extends JavaPlugin {
 
-    public static String prefix = "§7[§bLobby§7] ";
+    public static String prefix = "§7[§5Avalon§dMC§7] ";
     public static String noPerm = prefix + "§cDazu hast du keine Rechte!";
-
     public static ArrayList<Player> build = new ArrayList<>();
-
+    public static ArrayList<Player> vanish = new ArrayList<>();
     public static Plugin plugin;
 
     @Override
@@ -39,7 +35,6 @@ public final class Lobby extends JavaPlugin {
     private void initListeners() {
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(new ProtectionListener(), this);
-        pm.registerEvents(new ChatListener(), this);
         pm.registerEvents(new ConnectionListener(), this);
         pm.registerEvents(new LobbyItemInteractListener(), this);
         pm.registerEvents(new HideInventoryClickListener(), this);
@@ -50,6 +45,8 @@ public final class Lobby extends JavaPlugin {
         getCommand("fly").setExecutor(new FlyCommand());
         getCommand("chatclear").setExecutor(new ChatClearCommand());
         getCommand("setspawn").setExecutor(new SetSpawnCommand());
+        getCommand("gamemode").setExecutor(new GamemodeCommand());
+        getCommand("vanish").setExecutor(new VanishCommand());
     }
     public static void playMessageSound(Player p) {
         p.playSound(p.getLocation(), Sound.LAVA_POP, 1.0f, 1.0f);
